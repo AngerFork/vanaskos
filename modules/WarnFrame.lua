@@ -1,4 +1,4 @@
-﻿--[[----------------------------------------------------------------------
+--[[----------------------------------------------------------------------
       WarnFrame Module - Part of VanasKoS
 Creates the WarnFrame to alert of nearby KoS, Hostile and Friendly
 ------------------------------------------------------------------------]]
@@ -69,7 +69,7 @@ end
 
 local function CreateWarnFrameFonts(size)
 	if (testFontFrame == nil) then
-		testFontFrame = CreateFrame("Button", nil, UIParent)
+		testFontFrame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 		testFontFrame:SetText("XXXXXXXXXXXX [00+]")
 		testFontFrame:Hide()
 	end
@@ -257,7 +257,7 @@ local function CreateWarnFrame()
 		return
 	end
 	-- Create the Main Window
-	warnFrame = CreateFrame("Button", "VanasKoS_WarnFrame", UIParent)
+	warnFrame = CreateFrame("Button", "VanasKoS_WarnFrame", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 	warnFrame:SetToplevel(true)
 	warnFrame:SetMovable(true)
 	warnFrame:SetFrameStrata("LOW")
